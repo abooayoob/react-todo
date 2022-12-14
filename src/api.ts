@@ -3,7 +3,7 @@ export const dbApi = {
   getTodos() {
     return new Promise<{ data: typeof dbApi.todos; timeoutId: number }>(
       (resolve) => {
-        const timeoutId = setTimeout(() => {
+        const timeoutId = window.setTimeout(() => {
           console.log(`getTodos`, this.todos);
           resolve({ data: this.todos, timeoutId });
         }, 300);
@@ -13,7 +13,7 @@ export const dbApi = {
   addTodo(todo: string) {
     return new Promise<{ data: string; timeoutId: number }>((resolve) => {
       console.log(`addTodo`, this.todos);
-      const timeoutId = setTimeout(() => {
+      const timeoutId = window.setTimeout(() => {
         this.todos.add(todo);
         resolve({ data: todo, timeoutId });
       }, 300);
@@ -23,7 +23,7 @@ export const dbApi = {
     return new Promise<{ data: string; timeoutId: number }>(
       (resolve, reject) => {
         console.log(`deleteTodo`, this.todos);
-        const timeoutId = setTimeout(() => {
+        const timeoutId = window.setTimeout(() => {
           const chance = Math.random();
           if (chance > 0.5) {
             this.todos.delete(todo);
