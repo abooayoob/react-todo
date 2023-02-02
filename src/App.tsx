@@ -40,8 +40,6 @@ function App() {
 
   return (
     <div>
-    <h1>Todo App</h1>
-    <h2>It works</h2>
       {loadingTodos && <p>Loading...</p>}
 
       {errorMessage && (
